@@ -1,24 +1,12 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
-import { Geist, Geist_Mono } from 'next/font/google';
-
-// Inisialisasi font biar gak error "Unknown font Geist" di Vercel
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable} font-sans min-h-screen bg-zinc-950 text-zinc-50 flex flex-col items-center justify-between p-4 md:p-8`}>
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 flex flex-col items-center justify-between p-4 md:p-8 font-sans">
       {/* Header */}
       <header className="w-full max-w-2xl text-center py-4 border-b border-zinc-800">
         <h1 className="text-2xl font-bold tracking-wider text-cyan-400">ORBITAL AI</h1>
